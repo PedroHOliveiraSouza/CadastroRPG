@@ -14,13 +14,13 @@ public class Personagem {
         this.tipoDeArma = tipoDeArma;
     }
 
-    public void exibir() {
-        System.out.println("-----------------------------");
-        System.out.println("Nome: " + nome);
-        System.out.println("Classe: " + classe);
-        System.out.println("Nível: " + nivel);
-        System.out.println("Pontos de vida: " + pontosDeVida);
-        System.out.println("Arma: " + tipoDeArma);
-        System.out.println("-----------------------------");
+public void exibir() {
+        System.out.println("╔══════════════════════════════╗");
+        System.out.println("║  Nome: " + nome);
+        System.out.println("║  Classe: " + classe);
+        System.out.println("║  Nível :" + nivel);
+        System.out.println("║  Pontos de vida: " + pdv);
+        System.out.println("║  Arma: " + tipoDeArma);
+        System.out.println("╚══════════════════════════════╝");
     }
 }
