@@ -48,7 +48,7 @@ public class Main {
                     System.out.print("Classe (ex: Guerreiro, Mago, Arqueiro): ");
                     String classe = scanner.nextLine();
 
-                    System.out.print("Nível (1-99): ");
+                    System.out.print("Nível (1-100): ");
                     int nivel = scanner.nextInt();
 
                     System.out.print("Pontos de vida: ");
@@ -59,7 +59,7 @@ public class Main {
                     String arma = scanner.nextLine();
 
                     arvore.inserir(new Personagem(nome, classe, nivel, pv, arma));
-                    System.out.println("Personagem inserido com sucesso!");
+                    System.out.println("Personagem inserido.");
                     break;
 
                 case 2:
@@ -70,12 +70,12 @@ public class Main {
                         System.out.println("Personagem encontrado:");
                         encontrado.exibir();
                     } else {
-                        System.out.println("Nenhum personagem com nível " + nivelBusca + " encontrado.");
+                        System.out.println("Nenhum personagem com nível " + nivelBusca + " foi encontrado.");
                     }
                     break;
 
                 case 3:
-                    System.out.print("Digite o nível do personagem a remover: ");
+                    System.out.print("Digite o nível do personagem para remoção: ");
                     int nivelRemover = scanner.nextInt();
                     arvore.remover(nivelRemover);
                     break;
@@ -88,7 +88,7 @@ public class Main {
                 case 5:
                     Personagem forte = arvore.maisForte();
                     if (forte != null) {
-                        System.out.println("\nPersonagem mais forte (maior nível):");
+                        System.out.println("\nPersonagem mais forte: ");
                         forte.exibir();
                     } else {
                         System.out.println("A árvore está vazia.");
@@ -98,7 +98,7 @@ public class Main {
                 case 6:
                     Personagem fraco = arvore.maisFraco();
                     if (fraco != null) {
-                        System.out.println("\nPersonagem mais fraco (menor nível):");
+                        System.out.println("\nPersonagem mais fraco: ");
                         fraco.exibir();
                     } else {
                         System.out.println("A árvore está vazia.");
