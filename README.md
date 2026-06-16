@@ -2,9 +2,6 @@
  
 Sistema em console desenvolvido em Java para gerenciar personagens de RPG utilizando **Árvore Binária de Busca (ABB)** como estrutura principal.
  
-Trabalho prático da disciplina de **Estrutura de Dados** — UCSal  
-Professor(a): Karina Leite
- 
 ---
  
 ## 📁 Estrutura do Projeto
