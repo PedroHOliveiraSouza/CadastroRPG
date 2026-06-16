@@ -1,6 +1,6 @@
 # 🗡️ Sistema de Cadastro de Personagens RPG
  
-Sistema em console desenvolvido em Java para gerenciar personagens de RPG utilizando **Árvore Binária de Busca (ABB)** como estrutura principal.
+Sistema em console desenvolvido em Java para gerenciar personagens de RPG utilizando **Árvore Binária de Busca** como estrutura principal.
  
 ---
  
