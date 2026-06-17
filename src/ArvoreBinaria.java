@@ -6,8 +6,6 @@ public class ArvoreBinaria {
         this.raiz = null;
     }
 
-
-
     public void inserir(Personagem personagem) {
         raiz = inserirRecursivo(raiz, personagem);
     }
@@ -51,9 +49,6 @@ public class ArvoreBinaria {
             return buscarRecursivo(no.direita, nivel);
         }
     }
-
-
-
 
     public void exibirEmOrdem() {
         if (raiz == null) {
@@ -157,7 +152,6 @@ public class ArvoreBinaria {
         return atual.personagem;
     }
 
-
     public void remover(int nivel) {
         if (buscarPorNivel(nivel) == null) {
             System.out.println("Personagem com nível " + nivel + " não encontrado.");
@@ -198,7 +192,7 @@ public class ArvoreBinaria {
 
         return no;
     }
-
+    
     private No encontrarMenor(No no) {
         while (no.esquerda != null) {
             no = no.esquerda;
