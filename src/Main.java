@@ -6,14 +6,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ArvoreBinaria arvore = new ArvoreBinaria();
 
-        arvore.inserir(new Personagem("Aragorn",  "Guerreiro", 50, 500, "Espada"));
-        arvore.inserir(new Personagem("Gandalf",  "Mago",      80, 350, "Cajado"));
-        arvore.inserir(new Personagem("Legolas",  "Arqueiro",  65, 420, "Arco"));
-        arvore.inserir(new Personagem("Frodo",    "Hobbit",    15, 200, "Adaga"));
-        arvore.inserir(new Personagem("Gimli",    "Anão",      40, 550, "Machado"));
-        arvore.inserir(new Personagem("Sauron",   "Senhor",    99, 999, "Maça"));
-        arvore.inserir(new Personagem("Saruman",  "Mago",      90, 600, "Cajado"));
-        arvore.inserir(new Personagem("Boromir",  "Guerreiro", 35, 480, "Escudo"));
+        arvore.inserir(new Personagem("Aragorn", "Guerreiro", 50, 500, "Espada"));
+        arvore.inserir(new Personagem("Gandalf", "Mago", 80, 350, "Cajado"));
+        arvore.inserir(new Personagem("Legolas", "Arqueiro", 65, 420, "Arco"));
+        arvore.inserir(new Personagem("Frodo", "Hobbit", 15, 200, "Adaga"));
+        arvore.inserir(new Personagem("Gimli", "Anão", 40, 550, "Machado"));
+        arvore.inserir(new Personagem("Sauron", "Senhor", 99, 999, "Maça"));
+        arvore.inserir(new Personagem("Saruman", "Mago", 90, 600, "Cajado"));
+        arvore.inserir(new Personagem("Boromir", "Guerreiro", 35, 480, "Escudo"));
 
         int opcao;
 
