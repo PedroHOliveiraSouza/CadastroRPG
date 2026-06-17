@@ -6,7 +6,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ArvoreBinaria arvore = new ArvoreBinaria();
 
-        // Personagens iniciais para facilitar os testes
         arvore.inserir(new Personagem("Aragorn",  "Guerreiro", 50, 500, "Espada"));
         arvore.inserir(new Personagem("Gandalf",  "Mago",      80, 350, "Cajado"));
         arvore.inserir(new Personagem("Legolas",  "Arqueiro",  65, 420, "Arco"));
