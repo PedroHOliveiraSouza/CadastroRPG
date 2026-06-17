@@ -36,7 +36,7 @@ public class Main {
             System.out.print("Escolha uma opção: ");
 
             opcao = scanner.nextInt();
-            scanner.nextLine(); // limpa o buffer
+            scanner.nextLine(); 
 
             switch (opcao) {
 
