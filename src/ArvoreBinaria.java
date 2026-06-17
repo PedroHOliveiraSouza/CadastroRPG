@@ -6,28 +6,22 @@ public class ArvoreBinaria {
         this.raiz = null;
     }
 
-    // ─────────────────────────────────────────────
-    // ETAPA 2 – Inserção e Busca
-    // ─────────────────────────────────────────────
+
 
     public void inserir(Personagem personagem) {
         raiz = inserirRecursivo(raiz, personagem);
     }
 
     private No inserirRecursivo(No no, Personagem personagem) {
-        // Se chegou num espaço vazio, cria o nó aqui
         if (no == null) {
             return new No(personagem);
         }
 
         if (personagem.nivel < no.personagem.nivel) {
-            // Nível menor → vai para a esquerda
             no.esquerda = inserirRecursivo(no.esquerda, personagem);
         } else if (personagem.nivel > no.personagem.nivel) {
-            // Nível maior → vai para a direita
             no.direita = inserirRecursivo(no.direita, personagem);
         } else {
-            // Nível igual já existe
             System.out.println("Já existe um personagem com o nível " + personagem.nivel + ". Insira um nível diferente.");
         }
 
@@ -44,11 +38,11 @@ public class ArvoreBinaria {
 
     private No buscarRecursivo(No no, int nivel) {
         if (no == null) {
-            return null; // Não encontrado
+            return null;
         }
 
         if (nivel == no.personagem.nivel) {
-            return no; // Encontrado
+            return no;
         }
 
         if (nivel < no.personagem.nivel) {
@@ -58,11 +52,9 @@ public class ArvoreBinaria {
         }
     }
 
-    // ─────────────────────────────────────────────
-    // ETAPA 3 – Percursos, Contagem e Altura
-    // ─────────────────────────────────────────────
 
-    // Em ordem: esquerda → raiz → direita  (crescente de nível)
+
+
     public void exibirEmOrdem() {
         if (raiz == null) {
             System.out.println("A árvore está vazia.");
@@ -80,7 +72,6 @@ public class ArvoreBinaria {
         emOrdemRecursivo(no.direita);
     }
 
-    // Pré-ordem: raiz → esquerda → direita
     public void exibirPreOrdem() {
         if (raiz == null) {
             System.out.println("A árvore está vazia.");
@@ -98,7 +89,6 @@ public class ArvoreBinaria {
         preOrdemRecursivo(no.direita);
     }
 
-    // Pós-ordem: esquerda → direita → raiz
     public void exibirPosOrdem() {
         if (raiz == null) {
             System.out.println("A árvore está vazia.");
@@ -116,7 +106,6 @@ public class ArvoreBinaria {
         no.personagem.exibir();
     }
 
-    // Contagem de personagens
     public int contarPersonagens() {
         return contarRecursivo(raiz);
     }
@@ -128,7 +117,6 @@ public class ArvoreBinaria {
         return 1 + contarRecursivo(no.esquerda) + contarRecursivo(no.direita);
     }
 
-    // Altura da árvore
     public int calcularAltura() {
         return alturaRecursiva(raiz);
     }
@@ -140,7 +128,6 @@ public class ArvoreBinaria {
         int alturaEsquerda = alturaRecursiva(no.esquerda);
         int alturaDireita = alturaRecursiva(no.direita);
 
-        // A altura é 1 (nó atual) + o maior dos dois lados
         if (alturaEsquerda > alturaDireita) {
             return 1 + alturaEsquerda;
         } else {
@@ -148,7 +135,6 @@ public class ArvoreBinaria {
         }
     }
 
-    // Personagem mais forte = maior nível = nó mais à direita
     public Personagem maisForte() {
         if (raiz == null) {
             return null;
@@ -160,7 +146,6 @@ public class ArvoreBinaria {
         return atual.personagem;
     }
 
-    // Personagem mais fraco = menor nível = nó mais à esquerda
     public Personagem maisFraco() {
         if (raiz == null) {
             return null;
@@ -172,9 +157,6 @@ public class ArvoreBinaria {
         return atual.personagem;
     }
 
-    // ─────────────────────────────────────────────
-    // ETAPA 4 – Remoção
-    // ─────────────────────────────────────────────
 
     public void remover(int nivel) {
         if (buscarPorNivel(nivel) == null) {
@@ -191,22 +173,17 @@ public class ArvoreBinaria {
         }
 
         if (nivel < no.personagem.nivel) {
-            // Continua buscando na esquerda
             no.esquerda = removerRecursivo(no.esquerda, nivel);
 
         } else if (nivel > no.personagem.nivel) {
-            // Continua buscando na direita
             no.direita = removerRecursivo(no.direita, nivel);
 
         } else {
-            // Encontrou o nó para remover — três casos:
 
-            // Caso 1: Nó folha (sem filhos)
             if (no.esquerda == null && no.direita == null) {
                 return null;
             }
 
-            // Caso 2: Nó com apenas um filho
             if (no.esquerda == null) {
                 return no.direita;
             }
@@ -214,8 +191,6 @@ public class ArvoreBinaria {
                 return no.esquerda;
             }
 
-            // Caso 3: Nó com dois filhos
-            // Substitui pelo sucessor em ordem (menor nó da subárvore direita)
             No sucessor = encontrarMenor(no.direita);
             no.personagem = sucessor.personagem;
             no.direita = removerRecursivo(no.direita, sucessor.personagem.nivel);
@@ -224,7 +199,6 @@ public class ArvoreBinaria {
         return no;
     }
 
-    // Encontra o menor nó de uma subárvore (usado na remoção com 2 filhos)
     private No encontrarMenor(No no) {
         while (no.esquerda != null) {
             no = no.esquerda;
